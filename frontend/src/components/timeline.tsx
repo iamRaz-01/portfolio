@@ -6,6 +6,19 @@ import { motion } from "framer-motion";
 
 const timelineEvents = [
   {
+    type: "education",
+    icon: <GraduationCap size={16} className="text-blue-accent" />,
+    role: "Bachelor of Technology (B.Tech)",
+    company: "Saveetha Engineering College",
+    duration: "Expected Graduation: May 2028",
+    location: "Chennai, India",
+    points: [
+      "Specializing in Artificial Intelligence and Machine Learning.",
+      "Focusing on system-level programming, neural network architectures, data science, and distributed systems."
+    ],
+    tech: ["Python", "TensorFlow", "Scikit-Learn", "Machine Learning", "Deep Learning", "Pandas", "NumPy"]
+  },
+  {
     type: "work",
     icon: <Briefcase size={16} className="text-purple-accent" />,
     role: "Full Stack Developer Intern",
@@ -47,19 +60,6 @@ const timelineEvents = [
       "Acquired deep understanding of Git version control, CI/CD fundamentals, unit testing, and Agile workflows."
     ],
     tech: ["Java", "Spring Boot", "REST APIs", "MySQL", "Git & GitHub", "Agile Methodologies", "CI/CD"]
-  },
-  {
-    type: "education",
-    icon: <GraduationCap size={16} className="text-blue-accent" />,
-    role: "Bachelor of Technology (B.Tech)",
-    company: "Saveetha Engineering College",
-    duration: "Expected Graduation: May 2028",
-    location: "Chennai, India",
-    points: [
-      "Specializing in Artificial Intelligence and Machine Learning.",
-      "Focusing on system-level programming, neural network architectures, data science, and distributed systems."
-    ],
-    tech: ["Python", "TensorFlow", "Scikit-Learn", "Machine Learning", "Deep Learning", "Pandas", "NumPy"]
   }
 ];
 
