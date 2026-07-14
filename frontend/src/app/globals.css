@@ -1,0 +1,148 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-sans);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: oklch(0.015 0.005 270); /* Deep Obsidian Black */
+  --foreground: oklch(0.97 0.005 270); /* Off-white/Silver */
+  --card: oklch(0.04 0.01 270 / 50%); /* Obsidian Glass */
+  --card-foreground: oklch(0.97 0.005 270);
+  --popover: oklch(0.03 0.01 270);
+  --popover-foreground: oklch(0.97 0.005 270);
+  --primary: oklch(0.58 0.22 290); /* Electric Purple */
+  --primary-foreground: oklch(0.99 0.005 270);
+  --secondary: oklch(0.78 0.18 200); /* Neon Blue */
+  --secondary-foreground: oklch(0.02 0.005 270);
+  --muted: oklch(0.08 0.01 270);
+  --muted-foreground: oklch(0.7 0.01 270);
+  --accent: oklch(0.58 0.22 290);
+  --accent-foreground: oklch(0.99 0.005 270);
+  --destructive: oklch(0.62 0.22 28);
+  --border: oklch(0.18 0.02 270 / 40%); /* Premium dark border */
+  --input: oklch(0.12 0.02 270 / 60%);
+  --ring: oklch(0.58 0.22 290);
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-purple-accent: oklch(0.58 0.22 290);
+  --color-blue-accent: oklch(0.78 0.18 200);
+  --color-obsidian: oklch(0.015 0.005 270);
+  --color-obsidian-light: oklch(0.05 0.01 270);
+}
+
+@layer base {
+  * {
+    @apply border-border/60 outline-none;
+  }
+  body {
+    @apply bg-background text-foreground selection:bg-purple-accent/30 selection:text-white;
+    background-image: 
+      radial-gradient(circle at 50% 0%, oklch(0.12 0.08 290 / 25%) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, oklch(0.15 0.05 200 / 15%) 0%, transparent 50%);
+    background-attachment: fixed;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+  html {
+    @apply scroll-smooth;
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.18 0.02 270) transparent;
+  }
+}
+
+/* Glassmorphism custom classes */
+.glass {
+  background: rgba(6, 6, 8, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(157, 78, 221, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-blue {
+  background: rgba(6, 8, 10, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 240, 255, 0.12);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-hover:hover {
+  border-color: rgba(157, 78, 221, 0.25);
+  box-shadow: 0 0 25px rgba(157, 78, 221, 0.12);
+}
+
+.glass-blue-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-blue-hover:hover {
+  border-color: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.15);
+}
+
+.glow-purple {
+  box-shadow: 0 0 40px oklch(0.58 0.22 290 / 20%);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px oklch(0.78 0.18 200 / 20%);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 10px oklch(0.58 0.22 290 / 60%);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px oklch(0.78 0.18 200 / 60%);
+}
