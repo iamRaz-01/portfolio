@@ -92,7 +92,7 @@ export default function AiAssistant() {
 
     try {
       // Attempt API call to backend service
-      const res = await fetch("http://localhost:8000/api/chat", {
+      const res = await fetch("https://portfolio-backend-c0t9.onrender.com/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ query: text }),
