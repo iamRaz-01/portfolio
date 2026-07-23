@@ -3,6 +3,7 @@ import { Outfit, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -73,6 +74,7 @@ export default function RootLayout({
         <main className="flex-grow flex flex-col">{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId="G-9Y1NVF0BD1" />
     </html>
   );
 }
