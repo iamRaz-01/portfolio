@@ -229,12 +229,14 @@ export default function AiAssistant() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               disabled={loading}
-              className="flex-grow px-4 py-3 bg-obsidian border border-border/80 rounded-xl text-xs sm:text-sm text-white focus:border-purple-accent/60 outline-none transition-colors placeholder:text-muted-foreground/60"
+              aria-label="Ask Abdul's twin a question"
+              className="flex-grow px-4 py-3 bg-obsidian border border-border/80 rounded-xl text-xs sm:text-sm text-white focus:border-purple-accent/60 focus-visible:ring-2 focus-visible:ring-purple-accent/40 outline-none transition-colors placeholder:text-muted-foreground/60"
             />
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="p-3 rounded-xl bg-purple-accent hover:bg-purple-accent/80 text-white flex items-center justify-center transition-colors cursor-pointer disabled:opacity-50"
+              aria-label="Send message"
+              className="p-3 rounded-xl bg-purple-accent hover:bg-purple-accent/80 text-white flex items-center justify-center transition-colors cursor-pointer disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Send size={16} />
             </button>
