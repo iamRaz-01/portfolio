@@ -58,6 +58,7 @@ export default function Hero() {
             I build <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-accent to-blue-accent text-glow-purple">intelligent</span>
             <br />
             systems.
+            <span className="sr-only"> - Abdul Razak N | AI Engineer & Systems Architect</span>
           </motion.h1>
 
           {/* Dynamic Role Rotator */}

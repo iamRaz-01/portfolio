@@ -54,7 +54,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo / Brand */}
-        <a href="#home" className="flex items-center gap-3 group">
+        <a href="#home" className="flex items-center gap-3 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-accent rounded-lg p-1">
           <span className="relative flex h-3 w-3">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-accent opacity-75"></span>
             <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-accent"></span>
@@ -76,7 +76,7 @@ export default function Navbar() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`relative text-xs font-mono tracking-widest uppercase transition-colors hover:text-white ${
+                className={`relative text-xs font-mono tracking-widest uppercase transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-accent rounded px-1.5 py-0.5 ${
                   isActive 
                     ? "text-purple-accent font-semibold" 
                     : isAi 
@@ -101,7 +101,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <a
             href="#ai-assistant"
-            className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-accent border border-blue-accent/30 bg-blue-accent/5 px-4 py-2 rounded-lg glass-blue-hover transition-all"
+            className="flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-accent border border-blue-accent/30 bg-blue-accent/5 px-4 py-2 rounded-lg glass-blue-hover transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             <Bot size={14} className="animate-pulse" />
             AI Twin Chat
@@ -111,8 +111,9 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-muted-foreground hover:text-white transition-colors"
+          className="md:hidden p-2 text-muted-foreground hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-accent rounded-lg"
           aria-label="Toggle navigation menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

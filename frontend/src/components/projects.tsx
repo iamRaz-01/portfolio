@@ -160,7 +160,7 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredProjects.map((p) => (
-              <motion.div
+              <motion.article
                 key={p.id}
                 layout
                 initial={{ opacity: 0, y: 20 }}
@@ -177,6 +177,7 @@ export default function Projects() {
                       src={p.image}
                       alt={p.title}
                       fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover group-hover:scale-102 transition-transform duration-500 ease-in-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/40 to-transparent"></div>
@@ -224,7 +225,7 @@ export default function Projects() {
                   </div>
                 </div>
 
-              </motion.div>
+              </motion.article>
             ))}
           </AnimatePresence>
         </div>
@@ -268,6 +269,7 @@ export default function Projects() {
                   src={selectedProject.image}
                   alt={selectedProject.title}
                   fill
+                  sizes="(max-width: 1200px) 100vw, 80vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
